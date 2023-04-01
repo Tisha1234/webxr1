@@ -43,9 +43,9 @@ export class Scene extends Node {
     this._timestamp = -1;
     this._frameDelta = 0;
     this._statsStanding = false;
-    this._stats = null;
+   // this._stats = null;
     this._statsEnabled = false;
-    this.enableStats(true); // Ensure the stats are added correctly by default.
+   // this.enableStats(true); // Ensure the stats are added correctly by default.
 
     this._inputRenderer = null;
     this._resetInputEndFrame = true;
@@ -64,7 +64,7 @@ export class Scene extends Node {
 
   loseRenderer() {
     if (this._renderer) {
-      this._stats = null;
+      //this._stats = null;
       this._renderer = null;
       this._inputRenderer = null;
     }
@@ -178,7 +178,7 @@ export class Scene extends Node {
     }
   }
 
-  enableStats(enable) {
+ /* enableStats(enable) {
     if (enable == this._statsEnabled) {
       return;
     }
@@ -216,7 +216,7 @@ export class Scene extends Node {
       this._stats.scale = [0.3, 0.3, 0.3];
       quat.fromEuler(this._stats.rotation, -45.0, 0.0, 0.0);
     }
-  }
+  }*/
 
   draw(projectionMatrix, viewTransform, eye) {
     let view = new RenderView(projectionMatrix, viewTransform);
@@ -280,9 +280,9 @@ export class Scene extends Node {
   startFrame() {
     let prevTimestamp = this._timestamp;
     this._timestamp = performance.now();
-    if (this._stats) {
-      this._stats.begin();
-    }
+   // if (this._stats) {
+    //  this._stats.begin();
+   // }
 
     if (prevTimestamp >= 0) {
       this._frameDelta = this._timestamp - prevTimestamp;
@@ -300,9 +300,9 @@ export class Scene extends Node {
       this._inputRenderer.reset();
     }
 
-    if (this._stats) {
-      this._stats.end();
-    }
+    //if (this._stats) {
+     // this._stats.end();
+    //}
   }
 
   // Override to load scene resources on construction or context restore.
