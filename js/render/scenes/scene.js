@@ -44,7 +44,7 @@ export class Scene extends Node {
     this._frameDelta = 0;
     this._statsStanding = false;
    // this._stats = null;
-    this._statsEnabled = false;
+   // this._statsEnabled = false;
    // this.enableStats(true); // Ensure the stats are added correctly by default.
 
     this._inputRenderer = null;
